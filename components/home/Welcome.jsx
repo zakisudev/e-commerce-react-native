@@ -26,7 +26,7 @@ const Welcome = () => {
             style={styles.searchInput}
             value=""
             onPressIn={() => navigation.navigate('Search')}
-            placeholder="Search what you are looking for"
+            placeholder="What you are looking for"
           />
         </View>
         <View>
