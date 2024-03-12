@@ -8,11 +8,13 @@ const styles = StyleSheet.create({
   appBarHorizontal: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    width: '100%',
     alignItems: 'center',
     padding: SIZES.padding,
   },
   appBar: {
     flexDirection: 'row',
+    width: '100%',
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: SIZES.padding,
