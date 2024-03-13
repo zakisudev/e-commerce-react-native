@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignContent: 'center',
+    height: '100%',
     marginHorizontal: SIZES.small,
     backgroundColor: COLORS.secondary,
     borderRadius: SIZES.medium,
@@ -33,7 +34,8 @@ const styles = StyleSheet.create({
     width: 50,
     height: '100%',
     backgroundColor: COLORS.primary,
-    alignContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
     borderRadius: SIZES.medium,
   },
 });
