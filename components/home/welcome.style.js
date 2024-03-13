@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
   },
-  welcometxt: (color, top) => ({
+  welcomeTxt: (color, top) => ({
     fontSize: SIZES.xxLarge - 5,
     color: COLORS.primary,
     marginTop: top,
@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignContent: 'center',
+    height: '100%',
     marginHorizontal: SIZES.small,
     backgroundColor: COLORS.secondary,
     borderRadius: SIZES.medium,
@@ -44,7 +45,8 @@ const styles = StyleSheet.create({
     width: 50,
     height: '100%',
     backgroundColor: COLORS.primary,
-    alignContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
     borderRadius: SIZES.medium,
   },
 });

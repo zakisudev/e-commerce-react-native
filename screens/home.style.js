@@ -14,13 +14,12 @@ const styles = StyleSheet.create({
   },
   appBar: {
     flexDirection: 'row',
-    width: '100%',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    alignContent: 'center',
     padding: SIZES.padding,
+    gap: SIZES.large,
   },
   location: {
-    fontFamily: 'semibold',
+    fontFamily: 'semiBold',
     fontSize: SIZES.medium,
     color: COLORS.gray,
     flexDirection: 'row',

@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
   price: {
     padding: 10,
-    fontFamily: 'semibold',
+    fontFamily: 'semiBold',
     fontSize: SIZES.large,
   },
   priceWrapper: {
