@@ -11,16 +11,17 @@ const Welcome = () => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <Text style={styles.welcometxt(COLORS.black, SIZES.xxLarge)}>
+        <Text style={styles.welcomeTxt(COLORS.black, SIZES.xLarge)}>
           Find your best
         </Text>
-        <Text style={styles.welcometxt(COLORS.primary, 0)}>Product yet</Text>
+        <Text style={styles.welcomeTxt(COLORS.primary, 0)}>Product yet</Text>
       </View>
 
       <View style={styles.searchContainer}>
         <TouchableOpacity>
           <Feather name="search" size={24} style={styles.searchIcon} />
         </TouchableOpacity>
+
         <View style={styles.searchWrapper}>
           <TextInput
             style={styles.searchInput}
@@ -29,6 +30,7 @@ const Welcome = () => {
             placeholder="What you are looking for"
           />
         </View>
+
         <View>
           <TouchableOpacity style={styles.searchBtn}>
             <Ionicons
