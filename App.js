@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -19,7 +19,7 @@ export default function App() {
     semiBold: require('./assets/fonts/Poppins-SemiBold.ttf'),
   });
 
-  const onLayoutRootView = useCallback(async () => {
+  const onLayoutLoad = useCallback(async () => {
     if (fontsLoaded) {
       await SplashScreen.hideAsync();
     }
@@ -33,7 +33,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Bottom Navigation"
+          name="BottomNavigation"
           component={BottomTabNavigation}
           options={{ headerShown: false }}
         />
