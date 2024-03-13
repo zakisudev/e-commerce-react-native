@@ -37,3 +37,5 @@ const styles = StyleSheet.create({
     borderRadius: SIZES.medium,
   },
 });
+
+export default styles;

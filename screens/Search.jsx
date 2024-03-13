@@ -1,8 +1,9 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
 import { COLORS } from '../assets/constants';
+import styles from './search.style';
 
 const Search = () => {
   return (
@@ -30,4 +31,3 @@ const Search = () => {
 };
 
 export default Search;
-const styles = StyleSheet.create({});
