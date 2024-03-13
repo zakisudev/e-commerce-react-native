@@ -8,8 +8,11 @@ import {
 } from '@expo/vector-icons';
 import { COLORS, SIZES } from '../../assets/constants';
 import { useState } from 'react';
+import { useRoute } from '@react-navigation/native';
 
 const ProductDetails = ({ navigation }) => {
+  const route = useRoute();
+  const { item } = route.params;
   const [count, setCount] = useState(1);
 
   const increment = () => setCount(count + 1);
@@ -28,17 +31,20 @@ const ProductDetails = ({ navigation }) => {
       </View>
 
       <Image
-        source={{ uri: 'https://google.com/image1.png' }}
+        source={{
+          uri: item.imageUrl,
+        }}
         style={styles.image}
       />
 
       <View style={styles.details}>
         <View style={styles.titleRow}>
-          <Text style={styles.title}>Product</Text>
+          <Text style={styles.title}>{item.title}</Text>
           <View style={styles.priceWrapper}>
-            <Text style={styles.price}>$ 699</Text>
+            <Text style={styles.price}>$ {item.price}</Text>
           </View>
         </View>
+
         <View style={styles.ratingRow}>
           <View style={styles.rating}>
             <TouchableOpacity onPress={() => decrement()}>
@@ -52,9 +58,10 @@ const ProductDetails = ({ navigation }) => {
             </TouchableOpacity>
           </View>
         </View>
+
         <View style={styles.descriptionWrapper}>
           <Text style={styles.description}>
-            <Text style={styles.descText}>Some description</Text>
+            <Text style={styles.descText}>{item.description}</Text>
           </Text>
         </View>
 
@@ -71,6 +78,7 @@ const ProductDetails = ({ navigation }) => {
             </View>
           </View>
         </View>
+
         <View style={styles.cartRow}>
           <TouchableOpacity onPress={() => {}} style={styles.cartBtn}>
             <Text style={styles.cartTitle}>BUY NOW</Text>
@@ -84,4 +92,5 @@ const ProductDetails = ({ navigation }) => {
     </View>
   );
 };
+
 export default ProductDetails;
