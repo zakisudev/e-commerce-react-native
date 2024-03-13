@@ -8,5 +8,6 @@ const Cart = () => {
     </SafeAreaView>
   );
 };
+
 export default Cart;
 const styles = StyleSheet.create({});
