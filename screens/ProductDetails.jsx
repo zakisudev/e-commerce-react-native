@@ -1,12 +1,110 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
+import {
+  Ionicons,
+  SimpleLineIcons,
+  MaterialCommunityIcons,
+  Fontisto,
+} from '@expo/vector-icons';
+import { COLORS, SIZES } from '../assets/constants';
+import { useState } from 'react';
+import { useRoute } from '@react-navigation/native';
+import styles from './productDetails.style';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-const ProductDetails = () => {
+const ProductDetails = ({ navigation }) => {
+  const route = useRoute();
+  const { item } = route.params;
+  const [count, setCount] = useState(1);
+
+  const increment = () => setCount(count + 1);
+  const decrement = () => count > 1 && setCount(count - 1);
+
   return (
-    <SafeAreaView>
-      <Text>ProductDetails</Text>
-    </SafeAreaView>
+    <GestureHandlerRootView>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.upperRow}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Ionicons name="chevron-back-icon" size={30} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => {}}>
+            <Ionicons name="heart" size={30} color={COLORS.primary} />
+          </TouchableOpacity>
+        </View>
+
+        {item && (
+          <>
+            <Image
+              source={{
+                uri: item.imageUrl,
+              }}
+              style={styles.image}
+            />
+
+            <View style={styles.details}>
+              <View style={styles.titleRow}>
+                <Text style={styles.title}>{item.title}</Text>
+                <View style={styles.priceWrapper}>
+                  <Text style={styles.price}>$ {item.price}</Text>
+                </View>
+              </View>
+
+              <View style={styles.ratingRow}>
+                <View style={styles.rating}>
+                  <TouchableOpacity onPress={() => decrement()}>
+                    <SimpleLineIcons name="minus" size={20} />
+                  </TouchableOpacity>
+
+                  <Text style={styles.ratingText}>{count}</Text>
+
+                  <TouchableOpacity onPress={() => increment()}>
+                    <SimpleLineIcons name="plus" size={20} />
+                  </TouchableOpacity>
+                </View>
+              </View>
+
+              <View style={styles.descriptionWrapper}>
+                <Text style={styles.description}>
+                  <Text style={styles.descText}>{item.description}</Text>
+                </Text>
+              </View>
+
+              <View style={{ marginBottom: SIZES.small }}>
+                <View style={styles.location}>
+                  <View style={{ flexDirection: 'row' }}>
+                    <Ionicons name="location-outline" size={20} />
+                    <Text style={{}}>{item.product_location}</Text>
+                  </View>
+
+                  <View style={{ flexDirection: 'row' }}>
+                    <MaterialCommunityIcons
+                      name="truck-delivery-outline"
+                      size={20}
+                    />
+                    <Text style={{}}>Free delivery</Text>
+                  </View>
+                </View>
+              </View>
+
+              <View style={styles.cartRow}>
+                <TouchableOpacity onPress={() => {}} style={styles.cartBtn}>
+                  <Text style={styles.cartTitle}>BUY NOW</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => {}} style={styles.addBtn}>
+                  <Fontisto
+                    name="shopping-bag"
+                    size={22}
+                    color={COLORS.lightWhite}
+                  />
+                </TouchableOpacity>
+              </View>
+            </View>
+          </>
+        )}
+      </SafeAreaView>
+    </GestureHandlerRootView>
   );
 };
 
 export default ProductDetails;
-const styles = StyleSheet.create({});
