@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 import BottomTabNavigation from './components/navigation/BottomTabNavigation';
-import { Cart, ProductDetails } from './screens';
+import { Cart, NewRivals, ProductDetails } from './screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,7 +33,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="BottomNavigation"
+          name="Bottom Navigation"
           component={BottomTabNavigation}
           options={{ headerShown: false }}
         />
@@ -45,6 +45,11 @@ export default function App() {
         <Stack.Screen
           name="ProductDetails"
           component={ProductDetails}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ProductsList"
+          component={NewRivals}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
