@@ -1,4 +1,4 @@
-import { COLORS, SIZES } from '../../assets/constants';
+import { SIZES } from '../../assets/constants';
 
 const styles = {
   container: {
