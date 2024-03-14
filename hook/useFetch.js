@@ -21,7 +21,7 @@ const useFetch = () => {
   };
 
   useEffect(() => {
-    fetchData();
+    if (!data || data.length < 1) fetchData();
   }, []);
 
   const refetch = () => {
