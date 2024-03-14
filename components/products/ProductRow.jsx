@@ -3,16 +3,15 @@ import styles from './productRow.style';
 import { COLORS, SIZES } from '../../assets/constants';
 import ProductCardView from './ProductCardView';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import useFetch from './../../hook/useFetch';
 
 const ProductRow = () => {
-  const { data, isLoading, error, refetch } = useFetch();
+  const { data, error, isLoading } = useFetch();
 
+  console.log(data, error, isLoading);
   return (
     <GestureHandlerRootView>
-      <View style={styles.container}>
+      {/* <View style={styles.container}>
         {isLoading ? (
           <ActivityIndicator size={SIZES.large} color={COLORS.primary} />
         ) : error ? (
@@ -20,7 +19,7 @@ const ProductRow = () => {
         ) : (
           data && (
             <FlatList
-              date={data}
+              data={data}
               keyExtractor={(item) => item._id}
               renderItem={({ item }) => <ProductCardView item={item} />}
               horizontal
@@ -28,7 +27,7 @@ const ProductRow = () => {
             />
           )
         )}
-      </View>
+      </View> */}
     </GestureHandlerRootView>
   );
 };
